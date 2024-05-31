@@ -42,3 +42,22 @@ int main(int argc, char *argv[]) {
                 exit(EXIT_FAILURE);
         }
     }
+/* Печать результатов разбора аргументов */
+    if (verbose_flag) {
+        printf("Подробный режим включен\n");
+    }
+    if (file_name) {
+        printf("Указан файл: %s\n", file_name);
+    }
+
+    /* Печать оставшихся аргументов (неопознанные параметры) */
+    if (optind < argc) {
+        printf("Неопознанные параметры: ");
+        while (optind < argc) {
+            printf("%s ", argv[optind++]);
+        }
+        printf("\n");
+    }
+
+    return EXIT_SUCCESS;
+}
