@@ -1,0 +1,91 @@
+# Prerequisites (заголовочные файлы, зависимости)
+*.d
+
+# Object files (объектные файлы)
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output (вывод компоновщика)
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers (предварительно скомпилированные заголовочные файлы)
+*.gch
+*.pch
+
+# Libraries (библиотеки)
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs) (разделяемые объекты, включая DLL для Windows)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables (исполняемые файлы)
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files (отладочные файлы)
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results (результаты компиляции модулей ядра)
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# Additional directories and files (дополнительные директории и файлы)
+# Build directories (каталоги сборки)
+build/
+Build/
+
+# IDE directories and files (каталоги и файлы IDE)
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and temporary files (логи и временные файлы)
+*.log
+*.tmp
+*.temp
+*.cache
+*.bak
+*.swp
+*~
+
+# CMake files (файлы CMake)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Package files (пакетные файлы)
+*.deb
+*.tar.gz
+*.zip
+*.7z
+*.rar
+
+# Documentation files (документационные файлы)
+*.pdf
+*.doc
+*.docx
+*.odt
