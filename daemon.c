@@ -209,3 +209,39 @@ void print_help(void)
 	printf("   -p --pid_file  filename   Файл PID, используемый демонизированным приложением\n");
 	printf("\n");
 }
+int main(int argc, char *argv[])
+{
+	static struct option long_options[] = {
+		{"conf_file", required_argument, 0, 'c'},
+		{"test_conf", required_argument, 0, 't'},
+		{"log_file", required_argument, 0, 'l'},
+		{"help", no_argument, 0, 'h'},
+		{"daemon", no_argument, 0, 'd'},
+		{"pid_file", required_argument, 0, 'p'},
+		{NULL, 0, 0, 0}
+	};
+	int value, option_index = 0, ret;
+	char *log_file_name = NULL;
+	int start_daemonized = 0;
+
+	app_name = argv[0];
+
+	/* Обработка всех аргументов командной строки */
+	while ((value = getopt_long(argc, argv, "c:l:t:p:dh", long_options, &option_index)) != -1) {
+		switch (value) {
+			case 'c':
+				conf_file_name = strdup(optarg);
+				break;
+			case 'l':
+				log_file_name = strdup(optarg);
+				break;
+			case 'p':
+				pid_file_name = strdup(optarg);
+				break;
+			case 't':
+				return test_conf_file(optarg);
+			case 'd':
+				start_daemonized = 1;
+				break;
+			case 'h':
+				print_help
